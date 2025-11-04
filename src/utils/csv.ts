@@ -1,4 +1,5 @@
-// src/utils/csv.ts
+// For csv
+
 import Papa from 'papaparse';
 import { Row } from '@/types';
 
@@ -13,7 +14,7 @@ export function parseCsvFile(file: File): Promise<Row[]> {
           reject(new Error(res.errors[0].message));
           return;
         }
-        // Convert to Row[] and ensure id
+      
         const data: Row[] = res.data.map((r: any, i: number) => ({
           id: String(Date.now() + i),
           ...r
