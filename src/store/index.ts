@@ -1,4 +1,3 @@
-// src/store/index.ts
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import tableReducer from './tableSlice';
@@ -12,7 +11,9 @@ import {
   PURGE,
   REGISTER
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // localStorage
+
+// localStorage
+import storage from 'redux-persist/lib/storage'; 
 
 const rootReducer = combineReducers({
   table: tableReducer
@@ -21,7 +22,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['table'] // persist table slice (columns visibility + data)
+  whitelist: ['table'] 
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -36,7 +37,6 @@ export const store = configureStore({
     })
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
