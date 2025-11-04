@@ -1,3 +1,5 @@
+//layout 
+
 import './globals.css';
 import Providers from '@/components/Providers';
 
