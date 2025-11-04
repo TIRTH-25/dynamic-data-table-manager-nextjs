@@ -1,4 +1,5 @@
-// src/components/ImportExport.tsx
+// ImportExport
+
 'use client';
 import React, { useState } from 'react';
 import { parseCsvFile } from '@/utils/csv';
@@ -20,7 +21,6 @@ export default function ImportExport({ open, onClose }: { open: boolean; onClose
     setError(null);
     try {
       const rows = await parseCsvFile(file);
-      // Validate required columns exist in CSV (based on at least name, email, age, role)
       const sample = rows[0] || {};
       const required = ['name', 'email', 'age', 'role'];
       const missing = required.filter(r => !Object.prototype.hasOwnProperty.call(sample, r));
@@ -29,7 +29,6 @@ export default function ImportExport({ open, onClose }: { open: boolean; onClose
         return;
       }
 
-      // Ensure dynamic columns are included (add missing props)
       const rowsWithIds = rows.map((r, i) => ({ id: String(Date.now() + i), ...r }));
       dispatch(importData(rowsWithIds));
       setSuccess(`Imported ${rowsWithIds.length} rows`);
