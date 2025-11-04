@@ -1,4 +1,4 @@
-// src/components/DataTable.tsx
+// DataTable
 'use client';
 import React, { useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -66,7 +66,6 @@ export default function DataTable() {
   };
 
   const handleExport = () => {
-    // Only include visible columns
     const rows = filtered.map(r => {
       const out: Record<string, any> = {};
       visibleColumns.forEach(c => out[c.label] = r[c.key]);
