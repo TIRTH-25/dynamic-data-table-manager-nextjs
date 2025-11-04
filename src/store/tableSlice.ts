@@ -1,4 +1,3 @@
-// src/store/tableSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Row, ColumnConfig } from '@/types';
 
