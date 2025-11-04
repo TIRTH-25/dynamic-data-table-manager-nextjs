@@ -1,4 +1,5 @@
-// src/app/page.tsx
+// page
+
 import DataTable from '@/components/DataTable';
 
 export default function Page() {
