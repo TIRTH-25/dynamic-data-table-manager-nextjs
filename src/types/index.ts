@@ -1,4 +1,3 @@
-// src/types/index.ts
 export type Role = 'Developer' | 'Designer' | 'Manager' | string;
 
 export interface Row {
@@ -7,7 +6,7 @@ export interface Row {
   email: string;
   age: number | string;
   role: Role;
-  [key: string]: any; // dynamic columns allowed
+  [key: string]: any; 
 }
 
 export interface ColumnConfig {
